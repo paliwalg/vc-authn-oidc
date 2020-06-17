@@ -18,7 +18,9 @@
       <p><b>               Apply for a Sim card online</b></p>
       <p>We have gone paperless. So you can !</p>
       <p>Apply through Relationship Credential issued by your bank and get the SIM card delievered at your home ! </p>
-      <p>Access your bank application for issuance for Relationship Credential </p>
+      <p>Access your bank application for issuance for Relationship Credential.</p>
+      </BR>
+      <p>Apply for Sim card only through your bank issued Relationship Credentials by clicking on button below.</p>
       {% url 'oidc_auth_request' as login_url %}
       <a class="btn btn-primary btn-lg"  href="{{ login_url }}?pres_req_conf_id={{ settings.VC_AUTHN_PRES_REQ_CONF_ID }}" role="button">Apply through Relationship Credential</a>
       {% else %}
@@ -27,6 +29,11 @@
       <p>You can close your session.</p>
       <a class="btn btn-primary btn-lg"  href="{% url 'oidc_end_session' %}" role="button">Close Session</a>
       {% endif %}
+      <p><b>Banks Included are</b></p>
+      <p>1. Future Bank</p>
+      <p>2. Bhavishya Bank</p>
+      <p>3. Avenir Bank</p>
+      <p>4. Tulevik Bank</p>
     </div>
   </body>
 </html>
