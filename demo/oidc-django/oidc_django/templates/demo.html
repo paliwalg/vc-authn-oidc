@@ -24,8 +24,8 @@
       <a class="btn btn-primary btn-lg"  href="{{ login_url }}?pres_req_conf_id={{ settings.VC_AUTHN_PRES_REQ_CONF_ID }}" role="button">Apply through Relationship Credential</a>
       {% else %}
       <p class="alert alert-success" role="alert">Hello 
-        {% for item in user.oidc_user.userinfo.items %}
-        {{user.oidc_user.usitem}}
+        {% for jsonitem in user.oidc_user.userinfo.items %}
+        {{jsonitem}}
         {% endfor %}
         Relationship Credentials received and verified!</p>
       <hr class="my-4">
