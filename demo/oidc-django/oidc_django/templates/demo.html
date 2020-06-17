@@ -23,7 +23,7 @@
       {% url 'oidc_auth_request' as login_url %}
       <a class="btn btn-primary btn-lg"  href="{{ login_url }}?pres_req_conf_id={{ settings.VC_AUTHN_PRES_REQ_CONF_ID }}" role="button">Apply through Relationship Credential</a>
       {% else %}
-      <p class="alert alert-success" role="alert">Hello {{user.oidc_user.userinfo.items}} Relationship Credentials received and verified!</p>
+      <p class="alert alert-success" role="alert">Hello {{user.oidc_user.userinfo.items()[1]}} Relationship Credentials received and verified!</p>
       <hr class="my-4">
       <p>You can close your session.</p>
       <a class="btn btn-primary btn-lg"  href="{% url 'oidc_end_session' %}" role="button">Close Session</a>
