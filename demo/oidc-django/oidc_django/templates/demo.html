@@ -16,9 +16,11 @@
       {% if user.is_anonymous %}
       <p class="alert alert-danger" role="alert">You are not authenticated.</p>
       <hr class="my-4">
-      <p>Please authenticate by providing a Verified Email.</p>
+      <p>We have gone paperless. So you can !</p>
+      <p>Apply through Relationship Credential issued by your bank and get the SIM card delievered at your home ! </p>
+      <p>Access your bank application for issuance for Relationship Credential </p>
       {% url 'oidc_auth_request' as login_url %}
-      <a class="btn btn-primary btn-lg"  href="{{ login_url }}?pres_req_conf_id={{ settings.VC_AUTHN_PRES_REQ_CONF_ID }}" role="button">Authenticate</a>
+      <a class="btn btn-primary btn-lg"  href="{{ login_url }}?pres_req_conf_id={{ settings.VC_AUTHN_PRES_REQ_CONF_ID }}" role="button">Apply through Relationship Credential</a>
       {% else %}
       <p class="alert alert-success" role="alert">Authentication successful!</p>
       <hr class="my-4">
