@@ -25,7 +25,9 @@
       {% else %}
       <p class="alert alert-success" role="alert">Hello 
         {% for jsonitem in user.oidc_user.userinfo.items %}
-        {{jsonitem}}
+        {% if jsonitem[0]  %}
+          {{jsonitem}}
+        {% endif %}
         {% endfor %}
         Relationship Credentials received and verified!</p>
       <hr class="my-4">
