@@ -85,10 +85,11 @@
          Relationship Credentials received and verified!. SIM will be delievered at your postal address : <B> {{user.oidc_user.userinfo.PostalAddress}} </B> </p>
       <hr class="my-4">
       <div class="row justify-content-center">
-      <p >You can close your session.<br<br></p>
-        <div>
+      <p >You can close your session.</p>
+        </div>
+    <div class="row justify-content-center">
      <a class="btn btn-primary btn-lg"  href="{% url 'oidc_end_session' %}" role="button">Close Session</a>
-        </div></div>
+        </div>
       {% endif %}
       <br><br>
   <p class="text-center">FutureCom accepts digital <i>Relationship Credentials</i> from the following banks for the instant verification and issuance
