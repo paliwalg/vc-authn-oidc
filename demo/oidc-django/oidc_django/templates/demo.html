@@ -1,28 +1,85 @@
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>FutureCom</title>
-  </head>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous">
+
+  <title>FutureCom</title>
+</head>
+
+<style>
+  .header {
+      font-style: italic;
+      background: #58aaca;
+      color: white;
+      padding: 10px;
+  }
+
+  .futurecom {
+      font-weight: 700;
+      margin-bottom: 0;
+  }
+
+  .future-bank {
+      background: #225ba2;
+      color: white;
+      padding: 10px;
+      font-family: MerriWeather;
+      font-size: 24px;
+  }
+
+  .bhavishya {
+    color: #dc3e36;
+    font-size: 24px;
+    text-decoration: underline;
+    font-weight: bold;    
+  }
+
+  .avenir {
+    color: #224c6b;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: underline;
+    font-family: Playfair Display;
+  }
+
+  .tulevik {
+    color: #61b12f;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: underline;
+    font-family: Archivo Narrow;
+  }
+
+
+
+</style>
+
   <body>
-    <div class="jumbotron">
-      <h1 class="display-4">FutureCom</h1>
-      <h1 class="display-5">Bringing the world to your finger tips</h1>
-      {% if user.is_anonymous %}
-      <hr class="my-4">
-      <p><b>               Apply for a Sim card online</b></p>
-      <p>We have gone paperless. So you can !</p>
-      <p>Apply through <i>Relationship Credential</i> issued by your bank and get the SIM card delievered at your home ! </p>
-      <p>Access your bank application for issuance for <i>Relationship Credential</i>.</p>
-      <p>Apply for Sim card only through your bank issued <i>Relationship Credential</i> by clicking on button below.</p>
+    <div class="header">
+    <h1 class="display-6 futurecom">FutureCom</h1>
+    <h5 class="display-5">Bringing the world to your finger tips</h5>
+  </div>
+  <!--<div class="jumbotron">-->
+
+  <p class="text-center mt-2"><b>Apply for a Sim card online</b></p>
+  <div class="col-sm-7 mx-auto mt-5">
+    <p>We have gone paperless. So you can !</p>
+    <p>Apply through <i>Relationship Credential</i> issued by your bank and get the SIM card delievered at your home ! </p>
+    <p>Access your bank application for issuance for <i>Relationship Credential</i>.</p>
+    <p>Apply for Sim card only through your bank issued<i>Relationship Credential</i> by clicking on button below.</p>
+  </div>
+      
       {% url 'oidc_auth_request' as login_url %}
+      <div class="row justify-content-center">
       <a class="btn btn-primary btn-lg"  href="{{ login_url }}?pres_req_conf_id={{ settings.VC_AUTHN_PRES_REQ_CONF_ID }}" role="button">Apply through Relationship Credential</a>
-      {% else %}
+      </div>
+       {% else %}
       <p class="alert alert-success" role="alert">Hello <B>
          {{user.oidc_user.userinfo.CustomerName}} </B>
          Relationship Credentials received and verified!. SIM will be delievered at your postal address : <B> {{user.oidc_user.userinfo.PostalAddress}} </B> </p>
@@ -31,12 +88,22 @@
       <a class="btn btn-primary btn-lg"  href="{% url 'oidc_end_session' %}" role="button">Close Session</a>
       {% endif %}
       <br><br>
-      <p>FutureCom accepts digital <i>Relationship Credentials</i> from the following banks for the instant verification and issuance of SIM cards</p>
-      <ul> 
-        <li>Future Bank</li>
-        <li>Bhavishya Bank</li>
-        <li>Avenir Bank</li>
-        <li>Tulevik Bank</li>
+      <br><br>
+  <p class="text-center">FutureCom accepts digital <i>Relationship Credentials</i> from the following banks for the instant verification and issuance
+    of SIM cards</p>
+  <div class="row col-sm-8 mx-auto mt-4">
+    <div class="col-sm-3 mx-auto">
+      <span class="future-bank">Future Bank</span>
     </div>
+    <div class="col-sm-3 mx-auto mt-5">
+      <span class="col-sm-6 mx-auto bhavishya">Bhavishya</span>
+    </div>
+    <div class="col-sm-3 mx-auto">
+      <span class="avenir">Avenir</span>
+    </div>
+    <div class="col-sm-3 mx-auto mt-5">
+      <span class="tulevik">Tulevik</span>
+    </div>
+  </div>
   </body>
 </html>
