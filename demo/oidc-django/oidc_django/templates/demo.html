@@ -24,7 +24,7 @@
       <a class="btn btn-primary btn-lg"  href="{{ login_url }}?pres_req_conf_id={{ settings.VC_AUTHN_PRES_REQ_CONF_ID }}" role="button">Apply through Relationship Credential</a>
       {% else %}
       <p class="alert alert-success" role="alert">Hello : <B>
-         {{user.oidc_user.userinfo.CustomerName}} <B>
+         {{user.oidc_user.userinfo.CustomerName}} </B>
          Relationship Credentials received and verified!. SIM will be delievered at your postal address : <B> {{user.oidc_user.userinfo.PostalAddress}} </B> </p>
       <hr class="my-4">
       <p>You can close your session.</p>
