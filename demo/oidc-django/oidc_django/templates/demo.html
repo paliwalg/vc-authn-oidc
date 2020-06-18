@@ -17,15 +17,15 @@
       <hr class="my-4">
       <p><b>               Apply for a Sim card online</b></p>
       <p>We have gone paperless. So you can !</p>
-      <p>Apply through Relationship Credential issued by your bank and get the SIM card delievered at your home ! </p>
-      <p>Access your bank application for issuance for Relationship Credential.</p>
-      <p>Apply for Sim card only through your bank issued Relationship Credentials by clicking on button below.</p>
+      <p>Apply through <i>Relationship Credential</i> issued by your bank and get the SIM card delievered at your home ! </p>
+      <p>Access your bank application for issuance for <i>Relationship Credential</i>.</p>
+      <p>Apply for Sim card only through your bank issued<i>Relationship Credential</i> by clicking on button below.</p>
       {% url 'oidc_auth_request' as login_url %}
       <a class="btn btn-primary btn-lg"  href="{{ login_url }}?pres_req_conf_id={{ settings.VC_AUTHN_PRES_REQ_CONF_ID }}" role="button">Apply through Relationship Credential</a>
       {% else %}
-      <p class="alert alert-success" role="alert">Hello 
-         {{user.oidc_user.userinfo.CustomerName}}
-        Relationship Credentials received and verified!. SIM will be delievered at your postal address {{user.oidc_user.userinfo.PostalAddress}} </p>
+      <p class="alert alert-success" role="alert">Hello : <B>
+         {{user.oidc_user.userinfo.CustomerName}} <B>
+         Relationship Credentials received and verified!. SIM will be delievered at your postal address : <B> {{user.oidc_user.userinfo.PostalAddress}} </B> </p>
       <hr class="my-4">
       <p>You can close your session.</p>
       <a class="btn btn-primary btn-lg"  href="{% url 'oidc_end_session' %}" role="button">Close Session</a>
