@@ -19,7 +19,7 @@
       <p>We have gone paperless. So you can !</p>
       <p>Apply through <i>Relationship Credential</i> issued by your bank and get the SIM card delievered at your home ! </p>
       <p>Access your bank application for issuance for <i>Relationship Credential</i>.</p>
-      <p>Apply for Sim card only through your bank issued<i>Relationship Credential</i> by clicking on button below.</p>
+      <p>Apply for Sim card only through your bank issued <i>Relationship Credential</i> by clicking on button below.</p>
       {% url 'oidc_auth_request' as login_url %}
       <a class="btn btn-primary btn-lg"  href="{{ login_url }}?pres_req_conf_id={{ settings.VC_AUTHN_PRES_REQ_CONF_ID }}" role="button">Apply through Relationship Credential</a>
       {% else %}
